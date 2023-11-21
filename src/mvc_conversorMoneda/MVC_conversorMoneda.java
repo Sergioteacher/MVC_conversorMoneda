@@ -7,6 +7,7 @@ public class MVC_conversorMoneda {
 		System.out.println("Hola salida de consola");
 		System.out.println("...");
 		System.out.println("... para supervisar ...");
+		System.out.println("...");
 	}
 
 }
