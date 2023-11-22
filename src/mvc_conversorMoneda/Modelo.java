@@ -14,10 +14,10 @@ public class Modelo {
 	 public Double getResultado() {
 	  return resultado;
 	 }
-	 public void convetirDolarAPeso() {
+	 public void convetirDolarAEuro() {
 	  resultado = cantidad * moneda;
 	 }
-	 public void convertirPesoADolar() {
+	 public void convertirEuroADolar() {
 	  resultado = cantidad * moneda;
 	 }
 }

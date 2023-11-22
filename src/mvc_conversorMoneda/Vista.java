@@ -1,7 +1,7 @@
 package mvc_conversorMoneda;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
+//import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,7 +17,11 @@ public class Vista extends JFrame {
 
 	private JPanel contentPane;
 
-	JButton euros, dolares;
+	private JPanel panel_norte;
+	private JPanel panel_centro;
+	private JPanel panel_sur;
+	JButton euros;
+	JButton dolares;
 	JLabel lResultado;
 	JTextField campoTexto;
 
@@ -27,34 +31,39 @@ public class Vista extends JFrame {
 	 */
 	public Vista() {
 		setTitle("Conversor Euro - Dolar");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JPanel panel_sur = new JPanel();
+		panel_norte = new JPanel();
+		contentPane.add(panel_norte, BorderLayout.NORTH);
+		panel_norte.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		campoTexto = new JTextField();
+		campoTexto.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_norte.add(campoTexto);
+		campoTexto.setColumns(10);
+		
+		panel_centro = new JPanel();
+		contentPane.add(panel_centro, BorderLayout.CENTER);
+		panel_centro.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		lResultado = new JLabel("Conversor...");
+		lResultado.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lResultado.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_centro.add(lResultado);
+		
+		panel_sur = new JPanel();
 		contentPane.add(panel_sur, BorderLayout.SOUTH);
 		panel_sur.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		//JButton euros = new JButton("Convertir a euros");
 		euros = new JButton("Convertir a euros");
 		panel_sur.add(euros);
 		
-		//JButton dolares = new JButton("Convertir a dolares");
 		dolares = new JButton("Convertir a dolares");
 		panel_sur.add(dolares);
-		
-		//JLabel lResultado = new JLabel("Conversor");
-		lResultado = new JLabel("Conversor");
-		lResultado.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lResultado.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lResultado, BorderLayout.CENTER);
-		
-		//campoTexto = new JTextField();
-		campoTexto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(campoTexto, BorderLayout.NORTH);
 		campoTexto.setColumns(10);
 	}
 
